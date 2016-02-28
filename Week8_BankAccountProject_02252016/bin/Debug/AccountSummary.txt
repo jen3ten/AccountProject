@@ -1,0 +1,14 @@
+***************************
+FIRST THIRD ACCOUNT SUMMARY
+***************************
+
+Account Holder: 	Jane Doe
+Account Number: 	894-36419
+Account Balance: 	$127.35
+
+TRANSACTION HISTORY
+Date				Transaction	Balance
+2/27/2016 9:45:39 PM		 		$100.00
+2/27/2016 9:45:49 PM		+   $23.45	$123.45
+2/27/2016 9:45:54 PM		+   $.50	$123.95
+2/27/2016 9:46:01 PM		+   $3.40	$127.35

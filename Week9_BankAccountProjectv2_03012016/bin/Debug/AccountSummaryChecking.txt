@@ -1,0 +1,12 @@
+************************************
+FIRST THIRD CHECKING ACCOUNT SUMMARY
+************************************
+
+Account Holder: 	Jane Doe
+Account Number: 	669-37646
+Checking Account Balance: 	$180.00
+
+TRANSACTION HISTORY
+Date				Transaction	Balance
+3/3/2016 7:00:20 PM		 		$200.00
+3/3/2016 7:00:51 PM		-   $20.00	$180.00

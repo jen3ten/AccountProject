@@ -47,6 +47,7 @@ namespace Week8_BankAccountProject_02252016
                             Console.WriteLine("Thanks for banking with us.");
                             Console.WriteLine("Good bye!");
                             Console.WriteLine();
+                            Console.ReadKey();
                             exit = true;
                             break;
                         }
@@ -61,10 +62,7 @@ namespace Week8_BankAccountProject_02252016
             int choice = 0;
             do
             {
-                Console.WriteLine("*******************************");
-                Console.WriteLine("FIRST THIRD BANKING APPLICATION");
-                Console.WriteLine("*******************************");
-                Console.WriteLine();
+                ResetScreen();
                 Console.WriteLine("Banking Menu");
                 Console.WriteLine();
                 Console.WriteLine("\t1. View Client Information");
@@ -89,11 +87,7 @@ namespace Week8_BankAccountProject_02252016
 
         static void ViewAcctInfo(string name, string number, double balance)
         {
-            Console.Clear();
-            Console.WriteLine("*******************************");
-            Console.WriteLine("FIRST THIRD BANKING APPLICATION");
-            Console.WriteLine("*******************************");
-            Console.WriteLine();
+            ResetScreen();
             Console.WriteLine("Account Information");
             Console.WriteLine();
             Console.WriteLine("Account Holder: \t{0}", name);
@@ -107,11 +101,7 @@ namespace Week8_BankAccountProject_02252016
 
         static void ViewAcctBalance(double balance)
         {
-            Console.Clear();
-            Console.WriteLine("*******************************");
-            Console.WriteLine("FIRST THIRD BANKING APPLICATION");
-            Console.WriteLine("*******************************");
-            Console.WriteLine();
+            ResetScreen();
             Console.WriteLine("Balance Information");
             Console.WriteLine();
             Console.WriteLine("Account Balance: \t${0:f2}", balance);
@@ -119,6 +109,15 @@ namespace Week8_BankAccountProject_02252016
             Console.Write("Press a key to return to the menu...");
             Console.ReadKey();
             Console.Clear();
+        }
+
+        static void ResetScreen()
+        {
+            Console.Clear();
+            Console.WriteLine("*******************************");
+            Console.WriteLine("FIRST THIRD BANKING APPLICATION");
+            Console.WriteLine("*******************************");
+            Console.WriteLine();
         }
     }
 }

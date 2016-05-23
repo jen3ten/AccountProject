@@ -3,10 +3,10 @@ FIRST THIRD CHECKING ACCOUNT SUMMARY
 ************************************
 
 Account Holder: 	Jane Doe
-Account Number: 	605-26790
-Checking Account Balance: 	$188.00
+Account Number: 	811-38857
+Checking Account Balance: 	$250.00
 
 TRANSACTION HISTORY
 Date				Transaction	Balance
-3/3/2016 7:36:23 PM		 		$200.00
-3/3/2016 7:36:48 PM		-   $12.00	$188.00
+5/2/2016 4:08:38 PM		 		$200.00
+5/2/2016 4:08:57 PM		+   $50.00	$250.00

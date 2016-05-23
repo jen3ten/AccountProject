@@ -11,8 +11,13 @@ namespace Week9_BankAccountProjectv2_03012016
     {
         static void Main(string[] args)
         {
+            //Instantiate new instance of Client class
             Client client = new Client();
+
+            //Assign a random account number to the new client object
             client.AccountNumber = client.GetAcctNumber();
+
+            //Instantiate new instances of Account classes- checking, reserve, and savings
             Account account = new Account(client.ClientName, client.AccountNumber);
             CheckingAccount checkAccount = new CheckingAccount(client.ClientName, client.AccountNumber);
             ReserveAccount reserveAccount = new ReserveAccount(client.ClientName, client.AccountNumber);
@@ -20,99 +25,99 @@ namespace Week9_BankAccountProjectv2_03012016
 
             bool exit = false;
 
-            do
+            do  //Continue to display menu until user exits
             {
                 int menuOption = Menu();
                 switch (menuOption)
                 {
                     case 1:
-                        {
-                            ScreenHeader();
-                            account.ViewAcctInfo(client.ClientName, client.AccountNumber, account.Balance);
-                            PressKey();
-                            break;
-                        }
+                    {
+                        ScreenHeader();
+                        account.ViewAcctInfo(client.ClientName, client.AccountNumber, account.Balance);
+                        PressKey();
+                        break;
+                    }
                     case 2:
-                        {
-                            ScreenHeader();
-                            Console.WriteLine("BALANCE INFORMATION");
-                            Console.WriteLine();
-                            account.ViewAcctBalance(checkAccount.AccountType, checkAccount.Balance);
-                            account.ViewAcctBalance(reserveAccount.AccountType, reserveAccount.Balance);
-                            account.ViewAcctBalance(savingsAccount.AccountType, savingsAccount.Balance);
-                            PressKey();
-                            break;
-                        }
+                    {
+                        ScreenHeader();
+                        Console.WriteLine("BALANCE INFORMATION");
+                        Console.WriteLine();
+                        account.ViewAcctBalance(checkAccount.AccountType, checkAccount.Balance);
+                        account.ViewAcctBalance(reserveAccount.AccountType, reserveAccount.Balance);
+                        account.ViewAcctBalance(savingsAccount.AccountType, savingsAccount.Balance);
+                        PressKey();
+                        break;
+                    }
                     case 3:
+                    {
+                        string action = "Deposit to";
+                        account.DepositFunds();
+                        int choice = AccountMenu(action);
+                        switch(choice)
                         {
-                            string action = "Deposit to";
-                            account.DepositFunds();
-                            int choice = AccountMenu(action);
-                            switch(choice)
+                            case 1:
                             {
-                                case 1:
-                                    {
-                                        checkAccount.DepositFundsChecking();
-                                        checkAccount.UpdateAcctFileChecking();
-                                        break;
-                                    }
-                                case 2:
-                                    {
-                                        reserveAccount.DepositFundsReserve();
-                                        reserveAccount.UpdateAcctFileReserve();
-                                        break;
-                                    }
-                                case 3:
-                                    {
-                                        savingsAccount.DepositFundsSavings();
-                                        savingsAccount.UpdateAcctFileSavings();
-                                        break;
-                                    }
-                                default:
-                                    break;
+                                checkAccount.DepositFundsChecking();
+                                checkAccount.UpdateAcctFileChecking();
+                                break;
                             }
-                            break;
+                            case 2:
+                            {
+                                reserveAccount.DepositFundsReserve();
+                                reserveAccount.UpdateAcctFileReserve();
+                                break;
+                            }
+                            case 3:
+                            {
+                                savingsAccount.DepositFundsSavings();
+                                savingsAccount.UpdateAcctFileSavings();
+                                break;
+                            }
+                            default:
+                                break;
                         }
+                        break;
+                    }
                     case 4:
+                    {
+                        string action = "Withdraw from";
+                        account.WithdrawFunds();
+                        int choice = AccountMenu(action);
+                        switch (choice)
                         {
-                            string action = "Withdraw from";
-                            account.WithdrawFunds();
-                            int choice = AccountMenu(action);
-                            switch (choice)
-                            {
-                                case 1:
-                                    {
-                                        checkAccount.WithdrawFundsChecking();
-                                        checkAccount.UpdateAcctFileChecking();
-                                        break;
-                                    }
-                                case 2:
-                                    {
-                                        reserveAccount.WithdrawFundsReserve();
-                                        reserveAccount.UpdateAcctFileReserve();
-                                        break;
-                                    }
-                                case 3:
-                                    {
-                                        savingsAccount.WithdrawFundsSavings();
-                                        savingsAccount.UpdateAcctFileSavings();
-                                        break;
-                                    }
-                                default:
-                                    break;
-                            }
+                        case 1:
+                        {
+                            checkAccount.WithdrawFundsChecking();
+                            checkAccount.UpdateAcctFileChecking();
                             break;
                         }
+                        case 2:
+                        {
+                            reserveAccount.WithdrawFundsReserve();
+                            reserveAccount.UpdateAcctFileReserve();
+                            break;
+                        }
+                        case 3:
+                        {
+                            savingsAccount.WithdrawFundsSavings();
+                            savingsAccount.UpdateAcctFileSavings();
+                            break;
+                        }
+                        default:
+                            break;
+                        }
+                        break;
+                    }
                     case 5:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Thanks for banking with us.");
-                            Console.WriteLine("Good bye!");
-                            Console.WriteLine();
-                            Console.ReadKey();
-                            exit = true;
-                            break;
-                        }
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Thanks for banking with us.");
+                        Console.WriteLine("Good bye!");
+                        Console.WriteLine();
+                        Console.ReadKey();
+                        exit = true;
+                        break;
+                    }
                     default: break;
                 }
             } while (!exit);
